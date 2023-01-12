@@ -1,5 +1,6 @@
 const coins : number[] = [1,22,2,2,2,5,6,1,2,3,3,3,2,2,2,4,4,89,5,6,6,7,7,2,3,9,1,2,3,3,3,33,5,6,12,22,33,44,55,66];
 //const coins : number[] = [1,2,2,2,10,78,12,45,21]
+//si el contador numref  no se le puede sumar valores de la moneda, si no de pasos de 1 en 1; 
 
 const minimumMoney = (coin: any) => {
     let long = coin.length;
