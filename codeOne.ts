@@ -2,12 +2,12 @@
 //MD5 = 18dc3e6b84d012ba71f9b1beebc533c4
 //S = 1
 const valorS: number = 1;
-const lista: number[] = [91, 929, 13, 9, 45, 89, 539, 125, 634, 987];
+const lista: number[] = [91, 929, 13, 9, 45, 89, 539, 125, 634, 987,90];
 
 const codigoOne = (s: number, lista: number[]) => {
     let l = lista.length
     let newLista: number[] = [];
-    let listaRes: number[] = [];
+    let listRes: number[] = [];
     let pos = 0;
     if(l <= 100){
         l--;
@@ -20,28 +20,26 @@ const codigoOne = (s: number, lista: number[]) => {
             newLista[i] = lista[i]
         }
     }
-
-    console.log(newLista, 'Original')
     
     for(let numero of newLista){
         let res = numero.toString()
-        let newNum: any = []
+        let newNum: string = '';
         let newS = s.toString()
-        let i = 0;
+        let numRes: number;
         for(let num of res){
             if(num < newS ){
-                newNum[i] = num;
-                i++;
+                newNum += num;
             }
         }
-        newNum= newNum.join('')
-        newNum= Number(newNum);
-        if(newNum){
-            listaRes[pos] = newNum;
+        numRes= Number(newNum);
+        if(newNum != ''){
+            listRes[pos] = numRes;
             pos++
         }
     }
-    console.log(listaRes, 'resultado quitando el numero:',s)
+
+    console.log(newLista, 'Original')
+    console.log(listRes, 'resultado quitando el numero:',s)
 }     
     
 codigoOne(valorS, lista)
